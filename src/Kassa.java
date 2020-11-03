@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class Kassa {
     Map<Burger,Lisandid> menüü;
     Burger valitudBurger = null;
-    Double burgeriHind = null;
+    public Double burgeriHind = null;
     Lisandid valitudBurgeriLisandid = null;
     
     public Kassa(Map<Burger,Lisandid> menüü) {
@@ -18,9 +18,10 @@ public class Kassa {
         }
         System.out.println("-----------------------------------------------------");
     }
-    public Double tagastaBurgerIhind(){
-        return this.burgeriHind;
-    }
+
+    // KOMPOSITSIOON
+
+
     public void KüsiMillistBurgeritKlietnSoovib(){
 
         while(true){
@@ -49,15 +50,19 @@ public class Kassa {
             this.burgeriHind = this.burgeriHind + this.valitudBurgeriLisandid.lisa1.hind;
         };
         if(valitudBurgeriLisandid.klientValibLisandid(this.valitudBurgeriLisandid.lisa2)){
-            burgeriHind = burgeriHind + this.valitudBurgeriLisandid.lisa1.hind;
+            this.burgeriHind = this.burgeriHind + this.valitudBurgeriLisandid.lisa2.hind;
         }
         if(valitudBurgeriLisandid.klientValibLisandid(valitudBurgeriLisandid.lisa3)){
-            burgeriHind = burgeriHind + valitudBurgeriLisandid.lisa1.hind;
+            this.burgeriHind = this.burgeriHind + this.valitudBurgeriLisandid.lisa3.hind;
         }
         if(valitudBurgeriLisandid.klientValibLisandid(valitudBurgeriLisandid.lisa4)){
-            burgeriHind = burgeriHind + valitudBurgeriLisandid.lisa1.hind;
+            this.burgeriHind = this.burgeriHind + this.valitudBurgeriLisandid.lisa4.hind;
         }
-        System.out.println(burgeriHind);
         System.out.println("-----------------------------------------------------");
+    }
+    public void saadaTšekk(){
+        this.valitudBurger.printBurger();
+        this.valitudBurgeriLisandid.printLisandid();
+        System.out.println("Teie arve on :" + this.burgeriHind);
     }
 }

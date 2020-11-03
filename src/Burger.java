@@ -2,6 +2,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Burger {
+
+    // KAPSELDUS
+
     String nimi, sai, liha;
     Double hind;
     public Burger(String nimi, String sai, String liha, double hind) {
@@ -19,6 +22,5 @@ public class Burger {
 
     public void printBurger(){
         System.out.println("Burger: " + this.nimi + " | "+ this.sai + " | "+ this.liha + " | "+ this.hind);
-        //lisandid.printLisandid();
     }
 }

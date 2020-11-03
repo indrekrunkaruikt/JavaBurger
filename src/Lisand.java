@@ -1,4 +1,7 @@
 public class Lisand {
+
+    // KAPSELDUS
+
     String nimi;
     Double hind;
     public Lisand(String a, Double b) {
